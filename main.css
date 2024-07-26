@@ -1,0 +1,16 @@
+body {
+  font-family: 'Times New Roman', 'Georgia', 'Times', serif;
+}
+
+.ext-room > .list-group {
+  height: 16rem;
+  overflow: auto;
+}
+
+.ext-user .btn {
+  display: none;
+}
+
+.ext-user:hover .btn {
+  display: block;
+}
