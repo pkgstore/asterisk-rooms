@@ -25,7 +25,7 @@
     for ($i = 0; $i < $count; $i++):
       $l = $l + 1;
       $room[$i] = (int)shell_exec(getcwd() . "/room.name.sh $l");
-      $users[$i] = (int)shell_exec(getcwd() . "/room.users.sh $room[$i]");
+      $users[$i] = shell_exec(getcwd() . "/room.users.sh $room[$i]");
       $users = array_filter(explode("\n", $users[$i]));
       ?>
       <div class="col">
@@ -48,15 +48,19 @@
             </div>
           </div>
           <ul class="list-group list-group-flush ext-users">
-            <?php foreach ($users as $user): ?>
+            <?php foreach ($users as $k => $v): ?>
               <li class="list-group-item ext-user">
+                <?php
+                $k = $k + 1;
+                $k = str_pad($k, 2, '0', STR_PAD_LEFT);
+                ?>
                 <div class="d-flex align-items-center">
                   <div><i class="fas fa-phone fa-fw me-1"></i></div>
-                  <div class="flex-grow-1 ext-name"><?php echo $user; ?></div>
+                  <div class="flex-grow-1 ext-name"><?php echo $v; ?></div>
                   <div class="ext-kick">
                     <form action="user.kick.sh.php" method="post">
                       <input type="hidden" name="room" value="<?php echo $room[$i]; ?>"/>
-                      <input type="hidden" name="user" value="<?php echo $user; ?>"/>
+                      <input type="hidden" name="user" value="<?php echo $k; ?>"/>
                       <button title="Удалить участника" type="submit" class="btn btn-danger btn-sm">
                         <i class="fas fa-user-xmark fa-fw"></i>
                       </button>
