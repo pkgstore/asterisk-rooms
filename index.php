@@ -18,7 +18,7 @@
   </nav>
 </header>
 <main class="container py-5">
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-3">
     <?php
     $count = shell_exec(getcwd() . '/room.count.sh');
     $l = 0;
@@ -47,30 +47,28 @@
               </div>
             </div>
           </div>
-          <ul class="list-group list-group-flush ext-users">
+          <div class="card-body ext-users">
             <?php foreach ($users as $k => $v): ?>
-              <li class="list-group-item ext-user">
-                <?php
+              <?php
                 $k = $k + 1;
                 $k = str_pad($k, 2, '0', STR_PAD_LEFT);
-                ?>
-                <div class="d-flex align-items-center">
-                  <div><i class="fas fa-phone fa-fw me-1"></i></div>
-                  <div class="flex-grow-1 ext-name"><?php echo $v; ?></div>
-                  <div class="ext-kick">
-                    <form action="user.kick.sh.php" method="post">
-                      <input type="hidden" name="room" value="<?php echo $room[$i]; ?>"/>
-                      <input type="hidden" name="user" value="<?php echo $k; ?>"/>
-                      <button title="Удалить участника" type="submit" class="btn btn-danger btn-sm">
-                        <i class="fas fa-user-xmark fa-fw"></i>
-                      </button>
-                    </form>
+              ?>
+              <div class="mb-3">
+                <form action="user.kick.sh.php" method="post">
+                  <input type="hidden" name="room" value="<?php echo $room[$i]; ?>"/>
+                  <input type="hidden" name="user" value="<?php echo $k; ?>"/>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-phone fa-fw"></i></span>
+                    <input type="text" class="form-control" value="<?php echo $v; ?>" readonly/>
+                    <button title="Удалить участника" type="submit" class="btn btn-outline-danger">
+                      <i class="fas fa-user-xmark fa-fw"></i>
+                    </button>
                   </div>
-                </div>
-              </li>
+                </form>
+              </div>
             <?php endforeach;
             unset($user); ?>
-          </ul>
+          </div>
         </div>
       </div>
     <?php endfor; ?>
