@@ -18,57 +18,30 @@
   </nav>
 </header>
 <main class="container py-5">
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-3">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3">
     <?php
     $count = shell_exec(getcwd() . '/room.count.sh');
     $l = 0;
     for ($i = 0; $i < $count; $i++):
       $l = $l + 1;
       $room[$i] = (int)shell_exec(getcwd() . "/room.name.sh $l");
-      $users[$i] = shell_exec(getcwd() . "/room.users.sh $room[$i]");
-      $users = array_filter(explode("\n", $users[$i]));
       ?>
       <div class="col">
-        <div id="room-<?php echo $room[$i]; ?>" class="card ext-room">
+        <div id="room-<?php echo $room[$i]; ?>" class="card room" data-room="<?php echo $room[$i]; ?>">
           <div class="card-header">
             <div class="d-flex align-items-center">
               <div class="flex-grow-1 ext-name">
                 <h5><?php echo $room[$i]; ?></h5>
               </div>
-              <div class="ext-kick">
-                <?php if ($users): ?>
-                  <form action="room.kick.sh.php" method="post">
-                    <input type="hidden" name="room" value="<?php echo $room[$i]; ?>">
-                    <button title="Удалить ВСЕХ участников" type="submit" class="btn btn-danger btn-sm">
-                      <i class="fas fa-xmark fa-fw"></i>
-                    </button>
-                  </form>
-                <?php endif; ?>
-              </div>
+              <form action="room.kick.sh.php" method="post">
+                <input type="hidden" name="room" value="<?php echo $room[$i]; ?>">
+                <button title="Удалить ВСЕХ участников" type="submit" class="btn btn-danger btn-sm room-kick">
+                  <i class="fas fa-xmark fa-fw"></i>
+                </button>
+              </form>
             </div>
           </div>
-          <div class="card-body ext-users">
-            <?php foreach ($users as $k => $v): ?>
-              <?php
-                $k = $k + 1;
-                $k = str_pad($k, 2, '0', STR_PAD_LEFT);
-              ?>
-              <div class="mb-3">
-                <form action="user.kick.sh.php" method="post">
-                  <input type="hidden" name="room" value="<?php echo $room[$i]; ?>"/>
-                  <input type="hidden" name="user" value="<?php echo $k; ?>"/>
-                  <div class="input-group">
-                    <span class="input-group-text"><i class="fas fa-phone fa-fw"></i></span>
-                    <input type="text" class="form-control" value="<?php echo $v; ?>" readonly/>
-                    <button title="Удалить участника" type="submit" class="btn btn-outline-danger">
-                      <i class="fas fa-user-xmark fa-fw"></i>
-                    </button>
-                  </div>
-                </form>
-              </div>
-            <?php endforeach;
-            unset($user); ?>
-          </div>
+          <div class="card-body"></div>
         </div>
       </div>
     <?php endfor; ?>
@@ -89,6 +62,7 @@
     </div>
   </div>
 </footer>
+<script src="jquery.min.js" defer></script>
 <script src="main.js" defer></script>
 </body>
 </html>
