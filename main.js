@@ -1,11 +1,13 @@
 $('form.room-kick').submit(function($e) {
   let $form = $(this);
   let $btn = $form.find('button');
+
   $e.preventDefault();
   $btn.prop('disabled', true);
   setTimeout(function() {
     $btn.prop('disabled', false);
   }, 2000);
+
   $.ajax({
     type: 'post',
     url: 'room.kick.sh.php',
@@ -18,11 +20,13 @@ $('form.room-kick').submit(function($e) {
 $('form.user-kick').submit(function($e) {
   let $form = $(this);
   let $btn = $form.find('button');
+
   $e.preventDefault();
   $btn.prop('disabled', true);
   setTimeout(function() {
     $btn.prop('disabled', false);
   }, 5000);
+
   $.ajax({
     type: 'post',
     url: 'user.kick.sh.php',
