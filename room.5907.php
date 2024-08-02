@@ -10,7 +10,7 @@ $users = array_filter(explode("\n", $users));
     <?php $user = explode('/', $user); ?>
     <div class="input-group mb-3">
       <span class="input-group-text"><code><?php echo (int)$user[0]; ?></code></span>
-      <input type="text" class="form-control" value="<?php echo $user[1]; ?>" readonly/>
+      <input type="text" class="form-control" value="<?php echo $user[1]; ?>" readonly>
     </div>
   <?php endforeach; ?>
 </div>
