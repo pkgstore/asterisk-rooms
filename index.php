@@ -33,9 +33,9 @@
               <div class="flex-grow-1 ext-name">
                 <h5><?php echo $room[$i]; ?></h5>
               </div>
-              <form action="room.kick.sh.php" method="post">
+              <form class="room-kick" action="room.kick.sh.php" method="post">
                 <input type="hidden" name="room" value="<?php echo $room[$i]; ?>">
-                <button title="Удалить ВСЕХ участников" type="submit" class="btn btn-danger btn-sm room-kick">
+                <button title="Удалить ВСЕХ участников" type="submit" class="btn btn-danger btn-sm">
                   <i class="fas fa-xmark fa-fw"></i>
                 </button>
               </form>
@@ -43,11 +43,11 @@
           </div>
           <div class="card-body"></div>
           <div class="card-footer">
-            <form action="user.kick.sh.php" method="post">
+            <form class="user-kick" action="user.kick.sh.php" method="post">
               <input type="hidden" name="room" value="<?php echo $room[$i]; ?>">
               <div class="input-group">
                 <input type="number" class="form-control" name="user" placeholder="Введите ID участника..." required>
-                <button title="Удалить участника" type="submit" class="btn btn-outline-danger user-kick">
+                <button title="Удалить участника" type="submit" class="btn btn-outline-danger">
                   <i class="fas fa-user-xmark fa-fw"></i>
                 </button>
               </div>

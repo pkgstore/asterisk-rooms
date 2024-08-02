@@ -1,11 +1,10 @@
-$('button.room-kick').click(function(e) {
-  let $el = $(this);
-  let $form = $el.closest('form');
-
-  e.preventDefault();
-  $el.prop('disabled', true);
+$('form.room-kick').submit(function($e) {
+  let $form = $(this);
+  let $btn = $form.find('button');
+  $e.preventDefault();
+  $btn.prop('disabled', true);
   setTimeout(function() {
-    $el.prop('disabled', false);
+    $btn.prop('disabled', false);
   }, 2000);
   $.ajax({
     type: 'post',
@@ -16,14 +15,13 @@ $('button.room-kick').click(function(e) {
   return false;
 });
 
-$('button.user-kick').click(function(e) {
-  let $el = $(this);
-  let $form = $el.closest('form');
-
-  e.preventDefault();
-  $el.prop('disabled', true);
+$('form.user-kick').submit(function($e) {
+  let $form = $(this);
+  let $btn = $form.find('button');
+  $e.preventDefault();
+  $btn.prop('disabled', true);
   setTimeout(function() {
-    $el.prop('disabled', false);
+    $btn.prop('disabled', false);
   }, 5000);
   $.ajax({
     type: 'post',
