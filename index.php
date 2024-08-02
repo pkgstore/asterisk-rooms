@@ -42,6 +42,17 @@
             </div>
           </div>
           <div class="card-body"></div>
+          <div class="card-footer">
+            <form action="user.kick.sh.php" method="post">
+              <input type="hidden" name="room" value="<?php echo $room[$i]; ?>"/>
+              <div class="input-group">
+                <input type="number" class="form-control" name="user" placeholder="Введите ID участника..." required/>
+                <button title="Удалить участника" type="submit" class="btn btn-outline-danger user-kick">
+                  <i class="fas fa-user-xmark fa-fw"></i>
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     <?php endfor; ?>
