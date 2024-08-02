@@ -1,12 +1,16 @@
-$('form.room-kick').submit(function($e) {
-  let $form = $(this);
-  let $btn = $form.find('button');
+const $room = $('.room');
+const $roomKick = $('form.room-kick');
+const $userKick = $('form.user-kick');
+
+$roomKick.submit(function($e) {
+  const $form = $(this);
+  const $btn = $form.find('button');
 
   $e.preventDefault();
   $btn.prop('disabled', true);
   setTimeout(function() {
     $btn.prop('disabled', false);
-  }, 2000);
+  }, 5000);
 
   $.ajax({
     type: 'post',
@@ -17,9 +21,9 @@ $('form.room-kick').submit(function($e) {
   return false;
 });
 
-$('form.user-kick').submit(function($e) {
-  let $form = $(this);
-  let $btn = $form.find('button');
+$userKick.submit(function($e) {
+  const $form = $(this);
+  const $btn = $form.find('button');
 
   $e.preventDefault();
   $btn.prop('disabled', true);
@@ -37,11 +41,11 @@ $('form.user-kick').submit(function($e) {
 });
 
 $('.room').each(function() {
-  let $id = $(this).data('room');
-  let $room = `#room-${$id} .card-body`;
-  let $users = `room.${$id}.php`;
+  const $id = $(this).data('room');
+  const $card = `#room-${$id} .card-body`;
+  const $users = `room.${$id}.php`;
 
   setInterval(function() {
-    $($room).load($users);
+    $($card).load($users);
   }, 1000);
 });

@@ -1,10 +1,13 @@
 <!doctype html>
+<?php
+  $srvIp = getHostByName(getHostName());
+?>
 <html class="h-100" lang="en" data-bs-theme="auto">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
-  <title>Конференции</title>
+  <title>Конференции (<?php echo $srvIp; ?>)</title>
   <link rel="stylesheet" href="bootstrap.min.css">
   <link rel="stylesheet" href="fonts.min.css">
   <link rel="stylesheet" href="main.css">
@@ -13,7 +16,7 @@
 <header>
   <nav class="navbar bg-light border-bottom">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Конференции</a>
+      <a class="navbar-brand" href="#">Конференции (<?php echo $srvIp; ?>)</a>
     </div>
   </nav>
 </header>
@@ -46,7 +49,7 @@
             <form class="user-kick" action="user.kick.sh.php" method="post">
               <input type="hidden" name="room" value="<?php echo $room[$i]; ?>">
               <div class="input-group">
-                <input type="number" class="form-control" name="user" placeholder="Введите ID участника..." required>
+                <input type="number" class="form-control" name="user" min="0" step="1" placeholder="Введите ID участника..." required>
                 <button title="Удалить участника" type="submit" class="btn btn-outline-danger">
                   <i class="fas fa-user-xmark fa-fw"></i>
                 </button>
