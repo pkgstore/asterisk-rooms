@@ -1,0 +1,6 @@
+<IfModule mod_auth.c>
+  AuthType Basic
+  AuthName 'Asterisk Conferences'
+  AuthUserFile '/path/to/.htpasswd'
+  Require valid-user
+</IfModule>
