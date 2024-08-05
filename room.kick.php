@@ -5,6 +5,6 @@ if (!isset($_POST['room']) && !is_numeric($_POST['room'])) {
   exit(1);
 }
 
-$room = escapeshellarg((int)$_POST['room']);
+$room = (int)$_POST['room'];
 
-shell_exec(getcwd() . "/room.kick.sh '" . $room . "'");
+shell_exec(getcwd() . '/room.kick.sh ' . escapeshellarg($room));

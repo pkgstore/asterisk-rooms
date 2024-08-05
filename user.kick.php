@@ -7,7 +7,7 @@ if (!isset($_POST['room']) && !isset($_POST['user'])) {
   }
 }
 
-$room = escapeshellarg((int)$_POST['room']);
-$user = escapeshellarg((int)str_pad($_POST['user'], 2, '0', STR_PAD_LEFT));
+$room = (int)$_POST['room'];
+$user = (int)str_pad($_POST['user'], 2, '0', STR_PAD_LEFT);
 
-shell_exec(getcwd() . "/user.kick.sh '" . $room . "' '" . $user . "'");
+shell_exec(getcwd() . '/user.kick.sh ' . escapeshellarg($room) . ' ' . escapeshellarg($user));

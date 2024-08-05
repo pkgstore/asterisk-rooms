@@ -4,8 +4,8 @@ if (!isset($_GET['room']) && !is_numeric($_GET['room'])) {
   exit(1);
 }
 
-$room = escapeshellarg((int)$_GET['room']);
-$users = shell_exec(getcwd() . "/user.list.sh '" . $room . "'");
+$room = (int)$_GET['room'];
+$users = shell_exec(getcwd() . '/user.list.sh ' . escapeshellarg($room));
 $users = array_filter(explode("\n", $users));
 ?>
 
