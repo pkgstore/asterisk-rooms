@@ -28,6 +28,8 @@ const $roomControl = ($selector) => {
     $i.addEventListener('submit', function ($e) {
       const $form = this;
       const $button = $form.querySelector('button[type="submit"]');
+      const $icon = $button.querySelector('i');
+      const $iconName = $icon.className;
 
       $e.preventDefault();
 
@@ -37,8 +39,10 @@ const $roomControl = ($selector) => {
       }).then($response=>$response.text());
 
       $button.disabled = true;
+      $icon.className = 'fas fa-cog fa-spin fa-fw';
       setTimeout(function () {
         $button.disabled = false;
+        $icon.className = $iconName;
       }, 5000);
     });
   });
