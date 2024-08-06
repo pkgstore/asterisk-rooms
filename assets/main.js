@@ -9,7 +9,7 @@ const $loadUsers = ($selector) => {
 
   $element.forEach($i => {
     const $id = $i.dataset.room;
-    const $card = `#users-${$id}`;
+    const $card = document.getElementById(`users-${$id}`);
     const $users = `user.list.php?room=${$id}`;
 
     setInterval(async function () {
@@ -17,7 +17,7 @@ const $loadUsers = ($selector) => {
         cache: 'no-cache',
         headers: {'Cache-Control': 'no-cache'}
       });
-      document.querySelector($card).innerHTML = await $response.text();
+      $card.innerHTML = await $response.text();
     }, 1000);
   });
 };
@@ -45,7 +45,7 @@ const $roomControl = ($selector) => {
 }
 
 const $lockUnlock = ($button) => {
-  const $icon = $button.querySelector('i');
+  const $icon = $button.getElementsByTagName('i');
   const $class = $icon.className;
 
   $button.disabled = true;

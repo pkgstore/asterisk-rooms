@@ -24,7 +24,7 @@ $n = 0;
           </form>
         </div>
       </div>
-      <div class="card-body" id="users-<?php echo $room; ?>"></div>
+      <div class="card-body" id="users-<?php echo $room; ?>" data-users="<?php echo $room; ?>"></div>
       <div class="card-footer">
         <form class="user-kick" action="user.kick.php" method="post">
           <input type="hidden" name="room" value="<?php echo $room; ?>">
