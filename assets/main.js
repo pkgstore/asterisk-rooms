@@ -9,7 +9,7 @@ const $loadUsers = ($selector) => {
 
   $element.forEach($i => {
     const $id = $i.dataset.room;
-    const $card = `#room-${$id}-users`;
+    const $card = `#users-${$id}`;
     const $users = `user.list.php?room=${$id}`;
 
     setInterval(async function () {
