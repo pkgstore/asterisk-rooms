@@ -14,6 +14,8 @@ return [
   'theme.light' => 'Light',
   'theme.switch' => 'Switch theme',
   'theme.theme' => 'UI Theme',
+  'user.id' => 'User ID',
   'user.kick' => 'Kick participant',
   'user.kick.placeholder' => 'Enter participant ID...',
+  'user.phone' => 'User Phone',
 ];

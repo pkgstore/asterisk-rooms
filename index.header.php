@@ -3,7 +3,7 @@
     <a class="navbar-brand" href="#">
       <?php echo $i18n['asterisk']; ?> <code><?php echo $srvIp; ?></code> / <?php echo $i18n['conferences']; ?>
     </a>
-    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navTopBar"
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navTopBar"
             aria-controls="navTopBar" aria-expanded="false" aria-label="Переключить навигацию">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -15,7 +15,7 @@
             <i class="fas fa-circle-half-stroke fa-fw"></i>
             <span><?php echo $i18n['theme.theme']; ?></span>
           </a>
-          <a title="<?php echo $i18n['theme.theme']; ?>" class="nav-link dropdown-toggle d-none d-lg-block ui-theme"
+          <a class="nav-link dropdown-toggle d-none d-lg-block ui-theme" title="<?php echo $i18n['theme.theme']; ?>"
              href="#" role="button" data-bs-toggle="dropdown"
              aria-expanded="false" aria-label="<?php echo $i18n['theme.switch']; ?>">
             <i class="fas fa-circle-half-stroke fa-fw"></i>
@@ -44,12 +44,12 @@
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
-          <a title="<?php echo $i18n['languages']; ?>" class="nav-link dropdown-toggle d-lg-none"
+          <a class="nav-link dropdown-toggle d-lg-none" title="<?php echo $i18n['languages']; ?>"
              href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fas fa-language fa-fw"></i>
             <span><?php echo $i18n['languages']; ?></span>
           </a>
-          <a title="<?php echo $i18n['languages']; ?>" class="nav-link dropdown-toggle d-none d-lg-block ui-theme"
+          <a class="nav-link dropdown-toggle d-none d-lg-block ui-theme" title="<?php echo $i18n['languages']; ?>"
              href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fas fa-language fa-fw"></i>
           </a>

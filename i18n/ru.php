@@ -1,6 +1,7 @@
 <?php
 
 return [
+  'asterisk' => 'Asterisk',
   'by' => 'от',
   'conferences' => 'Конференции',
   'languages' => 'Языки',
@@ -13,9 +14,8 @@ return [
   'theme.light' => 'Светлая',
   'theme.switch' => 'Переключить тему',
   'theme.theme' => 'Тема интерфейса',
+  'user.id' => 'ID пользователя',
   'user.kick' => 'Удалить участника',
   'user.kick.placeholder' => 'Введите ID участника...',
-  'asterisk' => 'Asterisk',
-  'user.id' => 'ID пользователя',
   'user.phone' => 'Телефон пользователя',
 ];

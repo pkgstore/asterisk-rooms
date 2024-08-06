@@ -24,14 +24,14 @@ body h6, body .h6 {
 }
 
 body code {
-  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   background-color: rgba(var(--bs-danger-rgb), 5%);
   border-radius: var(--bs-border-radius-sm);
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   padding: 0 .3rem;
 }
 
 body .card-body {
+  font-family: 'PT Serif', 'Times New Roman', 'Georgia', 'Times', serif;
   height: 16rem;
   overflow: auto;
-  font-family: 'PT Serif', 'Times New Roman', 'Georgia', 'Times', serif;
 }
