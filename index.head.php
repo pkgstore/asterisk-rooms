@@ -8,3 +8,5 @@
 <link rel="stylesheet" href="assets/fonts.fa.min.css">
 <link rel="stylesheet" href="assets/fonts.min.css">
 <link rel="stylesheet" href="assets/main.css">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicon.ico">
