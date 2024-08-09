@@ -1,5 +1,11 @@
 <?php
-if (!isset($_GET['room']) && !is_numeric($_GET['room'])) {
+
+function isNumeric($element)
+{
+  return filter_var($element, FILTER_VALIDATE_INT) !== false;
+}
+
+if (!isNumeric($_GET['room'])) {
   echo 'Room number is not correct!';
   exit(1);
 }

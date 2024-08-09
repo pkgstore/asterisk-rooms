@@ -1,13 +1,13 @@
 <?php
 $count = (int)shell_exec(getcwd() . '/room.count.sh');
-$n = 0;
+$x = 0;
 ?>
 
 <?php for ($i = 0; $i < $count; $i++): ?>
 
   <?php
-  $n = $n + 1;
-  $room = (int)shell_exec(getcwd() . "/room.name.sh '" . $n . "'");
+  $x++;
+  $room = (int)shell_exec(getcwd() . "/room.name.sh '" . $x . "'");
   ?>
   <div class="col">
     <div class="card room" id="room-<?php echo $room; ?>" data-room="<?php echo $room; ?>">

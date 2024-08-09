@@ -1,10 +1,13 @@
 <?php
 
-if (!isset($_POST['room']) && !isset($_POST['user'])) {
-  if (!is_numeric($_POST['room']) && !is_numeric($_POST['user'])) {
-    echo 'Room or user number is not correct!';
-    exit(1);
-  }
+function isNumeric($element)
+{
+  return filter_var($element, FILTER_VALIDATE_INT) !== false;
+}
+
+if (!isNumeric($_POST['room']) || !isNumeric($_POST['user'])) {
+  echo 'Room or user number is not correct!';
+  exit(1);
 }
 
 $room = (int)$_POST['room'];
