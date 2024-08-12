@@ -5,10 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const $loadUsers = ($selector) => {
-  const $element = document.querySelectorAll($selector);
+  const $el = document.querySelectorAll($selector);
+  const $len = $el.length;
 
-  $element.forEach($i => {
-    const $id = $i.dataset.room;
+  for (let $i = 0; $i < $len; ++$i) {
+    const $id = $el[$i].dataset.room;
     const $card = document.getElementById(`users-${$id}`);
     const $users = `user.list.php?room=${$id}`;
 
@@ -19,14 +20,15 @@ const $loadUsers = ($selector) => {
       });
       $card.innerHTML = await $response.text();
     }, 1000);
-  });
+  }
 };
 
 const $roomControl = ($selector) => {
-  const $element = document.querySelectorAll($selector);
+  const $el = document.querySelectorAll($selector);
+  const $len = $el.length;
 
-  $element.forEach($i => {
-    $i.addEventListener('submit', function ($e) {
+  for (let $i = 0; $i < $len; ++$i) {
+    $el[$i].addEventListener('submit', function ($e) {
       const $form = this;
       const $action = $form.getAttribute('action');
       const $method = $form.getAttribute('method');
@@ -41,7 +43,7 @@ const $roomControl = ($selector) => {
       $lockUnlock($button);
       $e.preventDefault();
     });
-  });
+  }
 }
 
 const $lockUnlock = ($button) => {
