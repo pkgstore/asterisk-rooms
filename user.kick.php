@@ -1,8 +1,8 @@
 <?php
 
-function isNumeric($element)
+function isNumeric($data)
 {
-  return filter_var($element, FILTER_VALIDATE_INT) !== false;
+  return filter_var($data, FILTER_VALIDATE_INT) !== false;
 }
 
 if (!isNumeric($_POST['room']) || !isNumeric($_POST['user'])) {
@@ -11,6 +11,6 @@ if (!isNumeric($_POST['room']) || !isNumeric($_POST['user'])) {
 }
 
 $room = (int)$_POST['room'];
-$user = (int)str_pad($_POST['user'], 2, '0', STR_PAD_LEFT);
+$user = str_pad((int)$_POST['user'], 2, '0', STR_PAD_LEFT);
 
 shell_exec(getcwd() . '/user.kick.sh ' . escapeshellarg($room) . ' ' . escapeshellarg($user));

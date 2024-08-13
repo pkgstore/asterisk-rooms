@@ -1,11 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-  $loadUsers('div.room');
+  $getUsers('div.room');
   $roomControl('form.room-kick');
   $roomControl('form.user-kick');
-  $tooltip('[data-bs-tooltip]');
 });
 
-const $loadUsers = ($selector) => {
+// ------------------------------------------------------------------------------------------------------------------ //
+// LOADING USERS
+// ------------------------------------------------------------------------------------------------------------------ //
+
+const $getUsers = ($selector) => {
   const $el = document.querySelectorAll($selector);
   const $len = $el.length;
 
@@ -23,6 +26,10 @@ const $loadUsers = ($selector) => {
   }
 };
 
+// ------------------------------------------------------------------------------------------------------------------ //
+// ROOM CONTROL
+// ------------------------------------------------------------------------------------------------------------------ //
+
 const $roomControl = ($selector) => {
   const $el = document.querySelectorAll($selector);
   const $len = $el.length;
@@ -39,14 +46,18 @@ const $roomControl = ($selector) => {
         method: $method, body: $body
       }).then($response => $response.text());
 
-      $lockUnlock($button);
+      $_lockUnlock($button);
       $e.preventDefault();
     });
   }
 }
 
-const $lockUnlock = ($button) => {
-  const $icon = $button.getElementsByTagName('i');
+// ------------------------------------------------------------------------------------------------------------------ //
+// COMMON FUNCTIONS
+// ------------------------------------------------------------------------------------------------------------------ //
+
+const $_lockUnlock = ($button) => {
+  const $icon = $button.querySelector('i');
   const $class = $icon.className;
 
   $button.disabled = true;
@@ -56,10 +67,3 @@ const $lockUnlock = ($button) => {
     $icon.className = $class;
   }, 5000);
 }
-
-const $tooltip = ($selector) => {
-  const $el = document.querySelectorAll($selector);
-  return [...$el].map($el => new bootstrap.Tooltip($el, {
-    container: 'body'
-  }));
-};

@@ -1,8 +1,8 @@
 <?php
 
-function isNumeric($element)
+function isNumeric($data)
 {
-  return filter_var($element, FILTER_VALIDATE_INT) !== false;
+  return filter_var($data, FILTER_VALIDATE_INT) !== false;
 }
 
 if (!isNumeric($_POST['room'])) {
