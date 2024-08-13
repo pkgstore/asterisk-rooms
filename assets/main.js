@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   $loadUsers('div.room');
   $roomControl('form.room-kick');
   $roomControl('form.user-kick');
+  $tooltip('[data-bs-tooltip]');
 });
 
 const $loadUsers = ($selector) => {
@@ -15,8 +16,7 @@ const $loadUsers = ($selector) => {
 
     setInterval(async function () {
       const $response = await fetch($users, {
-        cache: 'no-cache',
-        headers: {'Cache-Control': 'no-cache'}
+        cache: 'no-cache', headers: {'Cache-Control': 'no-cache'}
       });
       $card.innerHTML = await $response.text();
     }, 1000);
@@ -36,8 +36,7 @@ const $roomControl = ($selector) => {
       const $button = $form.querySelector('button[type="submit"]');
 
       fetch($action, {
-        method: $method,
-        body: $body
+        method: $method, body: $body
       }).then($response => $response.text());
 
       $lockUnlock($button);
@@ -57,3 +56,10 @@ const $lockUnlock = ($button) => {
     $icon.className = $class;
   }, 5000);
 }
+
+const $tooltip = ($selector) => {
+  const $el = document.querySelectorAll($selector);
+  return [...$el].map($el => new bootstrap.Tooltip($el, {
+    container: 'body'
+  }));
+};

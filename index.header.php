@@ -10,52 +10,30 @@
     <div class="collapse navbar-collapse" id="navTopBar">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle d-lg-none ui-theme"
-             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-circle-half-stroke fa-fw"></i>
-            <span><?php echo $i18n['theme.theme']; ?></span>
-          </a>
-          <a class="nav-link dropdown-toggle d-none d-lg-block ui-theme" title="<?php echo $i18n['theme.theme']; ?>"
+          <a class="nav-link dropdown-toggle" title=""
              href="#" role="button" data-bs-toggle="dropdown"
-             aria-expanded="false" aria-label="<?php echo $i18n['theme.switch']; ?>">
-            <i class="fas fa-circle-half-stroke fa-fw"></i>
+             aria-expanded="false" aria-label="">
+            <i class="fas fa-power-off fa-fw"></i>
           </a>
           <ul class="dropdown-menu dropdown-menu-end shadow">
             <li>
-              <button class="dropdown-item active" type="button" data-bs-theme-value="light" aria-pressed="true">
-                <i class="fas fa-sun fa-fw"></i>
-                <span><?php echo $i18n['theme.light']; ?></span>
-              </button>
+              <a class="dropdown-item" href="#">
+                <i class="fas fa-rotate fa-fw"></i>
+                <span>Reload</span>
+              </a>
             </li>
             <li>
-              <button class="dropdown-item" type="button" data-bs-theme-value="dark" aria-pressed="false">
-                <i class="fas fa-moon fa-fw"></i>
-                <span><?php echo $i18n['theme.dark']; ?></span>
-              </button>
+              <a class="dropdown-item" href="#">
+                <i class="fas fa-rotate-left fa-fw"></i>
+                <span>Restart</span>
+              </a>
             </li>
             <li>
-              <button class="dropdown-item" type="button" data-bs-theme-value="auto" aria-pressed="false">
-                <i class="fas fa-circle-half-stroke fa-fw"></i>
-                <span><?php echo $i18n['theme.auto']; ?></span>
-              </button>
+              <a class="dropdown-item" href="#">
+                <i class="fas fa-power-off fa-fw"></i>
+                <span>Stop</span>
+              </a>
             </li>
-          </ul>
-        </li>
-      </ul>
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle d-lg-none" title="<?php echo $i18n['languages']; ?>"
-             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-language fa-fw"></i>
-            <span><?php echo $i18n['languages']; ?></span>
-          </a>
-          <a class="nav-link dropdown-toggle d-none d-lg-block ui-theme" title="<?php echo $i18n['languages']; ?>"
-             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-language fa-fw"></i>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end shadow">
-            <li><a class="dropdown-item" href="?lang=ru"><?php echo $i18n['languages.ru']; ?></a></li>
-            <li><a class="dropdown-item" href="?lang=en"><?php echo $i18n['languages.en']; ?></a></li>
           </ul>
         </li>
       </ul>
