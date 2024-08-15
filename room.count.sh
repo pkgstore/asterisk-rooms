@@ -7,9 +7,9 @@ _cmd_exists() {
   fi
 }
 
-grep="$( command -v 'grep' )"; _cmd_exists 'grep'
-cut="$( command -v 'cut' )"; _cmd_exists 'cut'
-wc="$( command -v 'wc' )"; _cmd_exists 'wc'
+grep=$( command -v 'grep' ); _cmd_exists 'grep'
+cut=$( command -v 'cut' ); _cmd_exists 'cut'
+wc=$( command -v 'wc' ); _cmd_exists 'wc'
 
 ${grep} -v '^;' '/etc/asterisk/meetme.conf' | ${grep} 'conf =>' | ${cut} -d ' ' -f3 | ${wc} -l
 

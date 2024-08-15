@@ -7,8 +7,8 @@ _cmd_exists() {
   fi
 }
 
-asterisk="$( command -v 'asterisk' )"; _cmd_exists 'asterisk'
-awk="$( command -v 'awk' )"; _cmd_exists 'awk'
+asterisk=$( command -v 'asterisk' ); _cmd_exists 'asterisk'
+awk=$( command -v 'awk' ); _cmd_exists 'awk'
 
 ${asterisk} -x "core show version" | ${awk} '{ print $2 }'
 

@@ -7,10 +7,10 @@ _cmd_exists() {
   fi
 }
 
-grep="$( command -v 'grep' )"; _cmd_exists 'grep'
-cut="$( command -v 'cut' )"; _cmd_exists 'cut'
-head="$( command -v 'head' )"; _cmd_exists 'head'
-tail="$( command -v 'tail' )"; _cmd_exists 'tail'
+grep=$( command -v 'grep' ); _cmd_exists 'grep'
+cut=$( command -v 'cut' ); _cmd_exists 'cut'
+head=$( command -v 'head' ); _cmd_exists 'head'
+tail=$( command -v 'tail' ); _cmd_exists 'tail'
 
 ${grep} -v '^;' '/etc/asterisk/meetme.conf' | ${grep} 'conf =>' | ${cut} -d ' ' -f3 | ${head} -n "${1}" | ${tail} -1
 

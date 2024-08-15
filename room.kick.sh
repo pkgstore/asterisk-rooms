@@ -7,7 +7,7 @@ _cmd_exists() {
   fi
 }
 
-asterisk="$( command -v 'asterisk' )"; _cmd_exists 'asterisk'
+asterisk=$( command -v 'asterisk' ); _cmd_exists 'asterisk'
 
 ${asterisk} -x "meetme kick ${1} all"
 

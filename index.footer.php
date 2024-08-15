@@ -1,6 +1,6 @@
 <div class="section py-3 bg-body-secondary">
   <div class="container">
-    <div class="row row-cols-1 row-cols-lg-3 align-items-center text-body-secondary text-center small">
+    <div class="row row-cols-1 row-cols-lg-2 align-items-center text-body-secondary text-center small">
       <div class="col text-lg-start">
         <ul class="list-inline mb-0">
           <li class="list-inline-item">
@@ -25,14 +25,6 @@
               echo ' | v' . $version;
               ?>
             </div>
-          </li>
-        </ul>
-      </div>
-      <div class="col">
-        <ul class="list-inline mb-0">
-          <li class="list-inline-item">
-            <?php echo $i18n['asterisk']; ?>
-            <?php require 'core.version.php'; ?>
           </li>
         </ul>
       </div>

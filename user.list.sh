@@ -7,9 +7,9 @@ _cmd_exists() {
   fi
 }
 
-asterisk="$( command -v 'asterisk' )"; _cmd_exists 'asterisk'
-awk="$( command -v 'awk' )"; _cmd_exists 'awk'
-sed="$( command -v 'sed' )"; _cmd_exists 'sed'
+asterisk=$( command -v 'asterisk' ); _cmd_exists 'asterisk'
+awk=$( command -v 'awk' ); _cmd_exists 'awk'
+sed=$( command -v 'sed' ); _cmd_exists 'sed'
 
 ${asterisk} -x "meetme list ${1}" | ${awk} '{ print $3 "/" $4 }' | ${sed} '$d'
 
