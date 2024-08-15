@@ -1,9 +1,11 @@
 <!doctype html>
+
 <?php
 $srvIp = getHostByName(getHostName());
 $i18n = isset($_GET['lang']) ? $_GET['lang'] : 'ru';
 $i18n = require __DIR__ . '/i18n/' . $i18n . '.php';
 ?>
+
 <html class="h-100" lang="en" data-bs-theme="auto">
 <head><?php require __DIR__ . '/index.head.php'; ?></head>
 <body class="d-flex flex-column h-100">

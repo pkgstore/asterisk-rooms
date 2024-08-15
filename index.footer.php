@@ -6,23 +6,17 @@
           <li class="list-inline-item">
             <div>
               <?php
-              $heart = '<i class="fas fa-heart text-danger"></i>';
-              printf("%s %s %s", $i18n['made_with'], $heart, $i18n['by']);
-              ?>
-              <?php
               $cr = 'PGEgaHJlZj0iaHR0cHM6Ly9kdW5hZXYuZGV2LyIgdGFyZ2V0PSJfYmxhbmsiPll1cmkgRHVuYWV2PC9hPg==';
-              echo base64_decode($cr);
+              $heart = '<i class="fas fa-heart text-danger"></i>';
+              printf("%s %s %s %s", $i18n['made_with'], $heart, $i18n['by'], base64_decode($cr));
               ?>
             </div>
             <div>
               &copy; <?php echo date('Y'); ?>
               <?php
               $cr = 'PGEgaHJlZj0iaHR0cHM6Ly9mZG4uaW0vIiB0YXJnZXQ9Il9ibGFuayI+Rm91bmRhdGlvbiBJTTwvYT4=';
-              echo base64_decode($cr);
-              ?>
-              <?php
               $version = file_get_contents('VERSION');
-              echo ' | v' . $version;
+              echo base64_decode($cr) . ' | v' . $version;
               ?>
             </div>
           </li>

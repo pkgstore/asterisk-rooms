@@ -9,6 +9,7 @@ $x = 0;
   $x++;
   $room = (int)shell_exec(getcwd() . "/room.name.sh '" . $x . "'");
   ?>
+
   <div class="col">
     <div class="card room" id="room-<?php echo $room; ?>" data-room="<?php echo $room; ?>">
       <div class="card-header">
@@ -40,4 +41,5 @@ $x = 0;
       </div>
     </div>
   </div>
+
 <?php endfor; ?>
