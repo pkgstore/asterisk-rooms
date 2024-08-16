@@ -1,6 +1,6 @@
 <?php
 
-if ($_SERVER['PHP_AUTH_USER'] !== 'admin') {
+if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_USER'] !== 'admin') {
   echo 'Authentication required!';
   exit (1);
 }

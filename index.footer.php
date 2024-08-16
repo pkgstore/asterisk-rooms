@@ -15,7 +15,7 @@
               &copy; <?php echo date('Y'); ?>
               <?php
               $cr = 'PGEgaHJlZj0iaHR0cHM6Ly9mZG4uaW0vIiB0YXJnZXQ9Il9ibGFuayI+Rm91bmRhdGlvbiBJTTwvYT4=';
-              $version = file_get_contents('VERSION');
+              $version = file_get_contents(__DIR__ . '/VERSION');
               echo base64_decode($cr) . ' | v' . $version;
               ?>
             </div>

@@ -1,14 +1,7 @@
 <?php
 $count = (int)shell_exec(getcwd() . '/room.count.sh');
 $x = 0;
-?>
-
-<?php for ($i = 0; $i < $count; $i++): ?>
-
-  <?php
-  $x++;
-  $room = (int)shell_exec(getcwd() . "/room.name.sh '" . $x . "'");
-  ?>
+while ($x < $count): $room = (int)shell_exec(getcwd() . '/room.name.sh ' . escapeshellarg(++$x)); ?>
 
   <div class="col">
     <div class="card room" id="room-<?php echo $room; ?>" data-room="<?php echo $room; ?>">
@@ -42,4 +35,4 @@ $x = 0;
     </div>
   </div>
 
-<?php endfor; ?>
+<?php endwhile; ?>

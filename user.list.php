@@ -5,7 +5,7 @@ function isNumeric($data)
   return filter_var($data, FILTER_VALIDATE_INT) !== false;
 }
 
-if (!isNumeric($_GET['room'])) {
+if (!isset($_GET['room']) || !isNumeric($_GET['room'])) {
   echo 'Room number is not correct!';
   exit(1);
 }
@@ -13,9 +13,8 @@ if (!isNumeric($_GET['room'])) {
 $room = (int)$_GET['room'];
 $users = shell_exec(getcwd() . '/user.list.sh ' . escapeshellarg($room));
 $users = array_filter(explode("\n", $users));
-?>
 
-<?php foreach ($users as $user): ?>
+foreach ($users as $user): ?>
 
   <?php
   $user = explode('/', $user);

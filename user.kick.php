@@ -5,7 +5,7 @@ function isNumeric($data)
   return filter_var($data, FILTER_VALIDATE_INT) !== false;
 }
 
-if (!isNumeric($_POST['room']) || !isNumeric($_POST['user'])) {
+if (!isset($_POST['room'], $_POST['user']) || !isNumeric($_POST['room']) || !isNumeric($_POST['user'])) {
   echo 'Room or user number is not correct!';
   exit(1);
 }
