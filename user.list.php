@@ -26,7 +26,7 @@ foreach ($users as $user): ?>
        data-id="<?php echo $id; ?>" data-user="<?php echo $phone; ?>">
     <span class="input-group-text"><code><?php echo $id; ?></code></span>
     <input class="form-control" type="text" name="<?php echo $phone; ?>" value="<?php echo $phone; ?>"
-           aria-label="<?php echo $i18n['user.phone']; ?>" readonly>
+           aria-label="User <?php echo $phone; ?> (<?php echo $id; ?>)" readonly>
   </div>
 
 <?php endforeach; ?>
