@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  $getUsers('div.room');
+  $getUsers('div.room').catch(console.error);
   $formControl('form.room-kick');
   $formControl('form.user-kick');
   $urlControl('.core-power');
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // LOADING USERS
 // ------------------------------------------------------------------------------------------------------------------ //
 
-const $getUsers = ($selector) => {
+const $getUsers = async ($selector) => {
   const $el = document.querySelectorAll($selector);
   const $len = $el.length;
 

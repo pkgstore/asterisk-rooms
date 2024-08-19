@@ -17,6 +17,6 @@ $i18n = require __DIR__ . '/i18n/' . $i18n . '.php';
 </main>
 <footer class="mt-auto border-top bg-body-tertiary"><?php require __DIR__ . '/index.footer.php'; ?></footer>
 <script src="assets/js/bootstrap.bundle.min.js" defer></script>
-<script src="assets/js/main.js" defer></script>
+<script src="assets/js/main.min.js" defer></script>
 </body>
 </html>
